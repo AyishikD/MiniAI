@@ -1,4 +1,7 @@
-    __pycache__/
-    *.pyc
-    .env
-    env/
+# Byte-compiled / cache files
+__pycache__/
+*.py[cod]
+
+# Environment files
+.env
+env/
