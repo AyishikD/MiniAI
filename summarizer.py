@@ -25,7 +25,7 @@ def summarize_with_groq(text, topic):
     body = {
         "model": "llama3-70b-8192",
         "temperature": 0.8,
-        "max_tokens": 8192,
+        "max_tokens": 3000,
         "messages": [
             {
                 "role": "system",
