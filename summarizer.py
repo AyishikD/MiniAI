@@ -2,6 +2,7 @@ import os
 import requests
 from bs4 import BeautifulSoup
 from dotenv import load_dotenv
+import streamlit as st
 
 load_dotenv()
 
@@ -18,7 +19,7 @@ def scrape_text(url):
 def summarize_with_groq(text, topic):
     endpoint = "https://api.groq.com/openai/v1/chat/completions"
     headers = {
-        "Authorization": f"Bearer {os.getenv('GROQ_API_KEY')}",
+        "Authorization": f"Bearer {st.secrets.get("GROQ_API_KEY") or os.getenv("GROQ_API_KEY")}",
         "Content-Type": "application/json"
     }
     body = {

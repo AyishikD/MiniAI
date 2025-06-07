@@ -1,12 +1,13 @@
 import os
 import requests
 from dotenv import load_dotenv
+import streamlit as st
 
 load_dotenv()
 
 def get_search_links(query, num_links=10, api_key=None):
     if api_key is None:
-        api_key = os.getenv("SERPAPI_KEY")
+        api_key = os.getenv("SERPAPI_KEY") or st.secrets.get("SERPAPI_KEY")
     params = {
         "q": query,
         "api_key": api_key,
